@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: yellow;
+}
+
+h1 {
+    font-size: 1.5em; /* Diminuindo o tamanho do h1 */
+    text-align: center;
+    color: red;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 400px;
+    margin: auto;
+}
+
+label, select, input {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80%;
+    padding: 8px; /* Diminuindo o tamanho dos inputs */
+    box-sizing: border-box;
+    font-size: 0.9em; /* Ajustando a fonte para inputs menores */
+}
+
+.submit-button {
+    width: 100%;
+    padding: 8px; /* Diminuindo o padding do botão */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em; /* Ajustando a fonte do botão */
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.image-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      
+  }
+
+  .image-button img {
+      width: 50px; /* ajuste o tamanho conforme necessário */
+      height: 50px; /* ajuste o tamanho conforme necessário */
+  }
+
+  .delete-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      
+  }
+
+  .delete-button img {
+      width: 20px; /* ajuste o tamanho conforme necessário */
+      height: 20px; /* ajuste o tamanho conforme necessário */
+  }
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+    .submit-button {
+        padding: 10px; /* Ajustando o padding do botão em dispositivos móveis */
+    }
+}
+
+.copy-message {
+      text-align: center;
+      color: green;
+      font-size: 1em;
+      margin-top: 10px;
+      display: none;
+  }
