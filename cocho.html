@@ -106,9 +106,9 @@
         var resultDiv = document.getElementById('result');
 
         if (resultDiv.children.length === 0 || !resultDiv.children[0].classList.contains('header')) {
-            resultDiv.innerHTML = `<p class="header">Relatório dos Cochos</p><p class="data">Data: ${dataHora}</p><p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML = `<p class="header">Relatório dos Cochos</p><p class="data">Data: ${dataHora}</p><p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         } else {
-            resultDiv.innerHTML += `<p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML += `<p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         }
 
         document.getElementById('pasto').value = "";
