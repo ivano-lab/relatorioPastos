@@ -163,6 +163,11 @@
         var saco = document.getElementById('saco').value;
         var quantidade = document.getElementById('quantidade').value;
 
+        if (!pasto || !saco || !quantidade) {
+            alert('Por favor, preencha todos os campos.');
+            return; 
+        }
+
         var agora = new Date();
         var dataHora = agora.toLocaleString();
 
