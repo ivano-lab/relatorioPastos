@@ -150,6 +150,10 @@
     <img src="copy-svgrepo-com.svg">
   </button>
 
+  <button type="button" class="image-button" onclick="limparResultado()">
+    <img src="eraser-svgrepo-com.svg">
+  </button>
+
   <div id="copy-message" class="copy-message">Texto copiado para a área de transferência!</div>
 
 
@@ -166,6 +170,12 @@
         document.getElementById('saco').value = "";
         document.getElementById('quantidade').value = "";
     }
+
+    function limparResultado() {
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '';
+    }
+
 
     function copyToClipboard() {
         const resultDiv = document.getElementById('result');
