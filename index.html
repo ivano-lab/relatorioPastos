@@ -34,7 +34,7 @@
           font-size: 0.9em; /* Ajustando a fonte para inputs menores */
       }
 
-      button {
+      .submit-button {
           width: 100%;
           padding: 8px; /* Diminuindo o padding do botão */
           background-color: #4CAF50;
@@ -44,18 +44,40 @@
           font-size: 0.9em; /* Ajustando a fonte do botão */
       }
 
-      button:hover {
+      .submit-button:hover {
           background-color: #45a049;
       }
+
+      .image-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            
+        }
+
+        .image-button img {
+            width: 50px; /* ajuste o tamanho conforme necessário */
+            height: 50px; /* ajuste o tamanho conforme necessário */
+        }
+
 
       @media (max-width: 480px) {
           form {
               padding: 10px;
           }
-          button {
+          .submit-button {
               padding: 10px; /* Ajustando o padding do botão em dispositivos móveis */
           }
       }
+
+      .copy-message {
+            text-align: center;
+            color: green;
+            font-size: 1em;
+            margin-top: 10px;
+            display: none;
+        }
 
     </style>
 </head>
@@ -66,31 +88,69 @@
 <form action="/submit" method="post">
     <label for="pasto">Pasto:</label>
     <select id="pasto" name="pasto">
-        <option value="" disabled selected>
-        <option value="pasto1">Pasto 1</option>
-        <option value="pasto2">Pasto 2</option>
-        <option value="pasto3">Pasto 3</option>
-        <!-- Adicione mais opções conforme necessário -->
+        <option value="" disabled selected>Selecione o Pasto</option>
+            <option value="Pasto 1">Pasto 1</option>
+            <option value="Pasto 2">Pasto 2</option>
+            <option value="Pasto 3">Pasto 3</option>
+            <option value="Pasto 4">Pasto 4</option>
+            <option value="Pasto 5">Pasto 5</option>
+            <option value="Pasto 6">Pasto 6</option>
+            <option value="Pasto 7">Pasto 7</option>
+            <option value="Pasto 8">Pasto 8</option>
+            <option value="Pasto 9">Pasto 9</option>
+            <option value="Pasto 10">Pasto 10</option>
+            <option value="Pasto 11">Pasto 11</option>
+            <option value="Pasto 12">Pasto 12</option>
+            <option value="Pasto 13">Pasto 13</option>
+            <option value="Pasto 14">Pasto 14</option>
+            <option value="Pasto 15">Pasto 15</option>
+            <option value="Pasto 16">Pasto 16</option>
+            <option value="Pasto 17">Pasto 17</option>
+            <option value="Pasto 18.1">Pasto 18.1</option>
+            <option value="Pasto 18.2">Pasto 18.2</option>
+            <option value="Pasto 19.1">Pasto 19.1</option>
+            <option value="Pasto 19.2">Pasto 19.2</option>
+            <option value="Bastiao">Bastião</option>
+            <option value="Quicuio 1">Quicuio 1</option>
+            <option value="Quicuio 2">Quicuio 2</option>
+            <option value="Pasto da Mata">Pasto da Mata</option>
+            <option value="Paiada">Paiada</option>
+            <option value="Altamira">Altamira</option>
+            <option value="Pasto 23">Pasto 23</option>
+            <option value="Pasto 24">Pasto 24</option>
+            <option value="Pasto 25">Pasto 25</option>
+            <option value="Pasto 26">Pasto 26</option>
+            <option value="Pasto 27">Pasto 27</option>
+            <option value="Pasto 28">Pasto 28</option>
+            <option value="Pasto 30">Pasto 30</option>
     </select>
 
     <label for="saco">Saco:</label>
     <select id="saco" name="saco">
-        <option value="" disabled selected>
-        <option value="saco1">Saco 1</option>
-        <option value="saco2">Saco 2</option>
-        <option value="saco3">Saco 3</option>
-        <!-- Adicione mais opções conforme necessário -->
+        <option value="" disabled selected>Selecione um suplemento</option>
+        <option value="Sal">Sal</option>
+        <option value="Sal Mineral">Sal Mineral</option>
+        <option value="Sal com Ureia">Sal com Ureia</option>
+        <option value="Racao de Baixo Consumo">Ração de Baixo Consumo</option>
+        <option value="Racao de Alto Consumo">Ração de Alto Consumo</option>        
     </select>
 
     <label for="quantidade">Quantidade:</label>
     <input type="number" id="quantidade" name="quantidade" min="1" required>
 
-    <button type="button" onclick="exibirDados()">Adicionar</button>
+    <button type="button" class="submit-button" onclick="exibirDados()">Adicionar</button>
   </form>
   <br>
   <div id="result" style="margin-top: 20px; border: 1px solid #000; padding: 10px; width: 100%; max-width: 400px; margin: auto;">
     <!-- Os dados do formulário serão exibidos aqui -->
+    
   </div>
+  <button type="button" class="image-button" onclick="copyToClipboard()">
+    <img src="copy-svgrepo-com.svg">
+  </button>
+
+  <div id="copy-message" class="copy-message">Texto copiado para a área de transferência!</div>
+
 
   <script>
     function exibirDados() {
@@ -99,12 +159,30 @@
         var quantidade = document.getElementById('quantidade').value;
 
         var resultDiv = document.getElementById('result');
-        resultDiv.innerHTML += `<p>Pasto: ${pasto}</p><p>Saco: ${saco}</p><p>Qtd: ${quantidade}</p><hr>`;
+        resultDiv.innerHTML += `<p>${pasto} ${saco} ${quantidade} saco(s)</p><br>`;
 
         document.getElementById('pasto').value = "";
         document.getElementById('saco').value = "";
         document.getElementById('quantidade').value = "";
     }
+
+    function copyToClipboard() {
+        const resultDiv = document.getElementById('result');
+        const textToCopy = Array.from(resultDiv.querySelectorAll('p')).map(p => p.textContent).join('\n');
+
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                const copyMessage = document.getElementById('copy-message');
+                copyMessage.style.display = 'block';
+                setTimeout(() => {
+                    copyMessage.style.display = 'none';
+                }, 2000);
+            })
+            .catch(err => {
+                alert('Erro ao copiar texto: ', err);
+            });
+    }
+
   </script>
 </body>
 </html>
