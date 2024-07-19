@@ -163,8 +163,16 @@
         var saco = document.getElementById('saco').value;
         var quantidade = document.getElementById('quantidade').value;
 
+        var agora = new Date();
+        var dataHora = agora.toLocaleString();
+
         var resultDiv = document.getElementById('result');
-        resultDiv.innerHTML += `<p>${pasto}, ${saco}, ${quantidade} saco(s)</p>`;
+
+        if (resultDiv.children.length === 0 || !resultDiv.children[0].classList.contains('data')) {
+            resultDiv.innerHTML += `<p class="data">${dataHora}</p><p>${pasto}, ${saco}, ${quantidade} saco(s)</p>`;
+        } else {
+            resultDiv.innerHTML += `<p>${pasto}, ${saco}, ${quantidade} saco(s)</p>`;
+        }
 
         document.getElementById('pasto').value = "";
         document.getElementById('saco').value = "";
