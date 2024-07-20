@@ -68,7 +68,7 @@
         if (resultDiv.children.length === 0 || !resultDiv.children[0].classList.contains('header')) {
             resultDiv.innerHTML = `<p class="header">Relatório de Produção</p><p class="data">Data: ${dataHora}</p><p>${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         } else {
-            resultDiv.innerHTML += `<p>$${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML += `<p>${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         }
 
         document.getElementById('saco').value = "";
