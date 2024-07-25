@@ -22,6 +22,7 @@
         <option value="Ração de Baixo Consumo">Ração de Baixo Consumo</option>
         <option value="Ração de Alto Consumo">Ração de Alto Consumo</option>   
         <option value="Ração de Engorda">Ração de Engorda</option>     
+        <option value="Creep">Creep</option>     
     </select>
 
     <label for="quantidade">Quantidade:</label>
@@ -66,9 +67,9 @@
         var resultDiv = document.getElementById('result');
 
         if (resultDiv.children.length === 0 || !resultDiv.children[0].classList.contains('header')) {
-            resultDiv.innerHTML = `<p class="header">Relatório de Produção</p><p class="data">Data: ${dataHora}</p><p>${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML = `<p class="header">Relatório de Produção</p><p class="data">Data: ${dataHora}</p><p>${saco}: ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         } else {
-            resultDiv.innerHTML += `<p>${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML += `<p>${saco}: ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         }
 
         document.getElementById('saco').value = "";

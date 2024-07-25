@@ -15,42 +15,43 @@
     <label for="pasto">Pasto:</label>
     <select id="pasto" name="pasto">
         <option value="" disabled selected>Selecione o Pasto</option>
-            <option value="Pasto 1">Pasto 1</option>
-            <option value="Pasto 2">Pasto 2</option>
-            <option value="Pasto 3">Pasto 3</option>
-            <option value="Pasto 4">Pasto 4</option>
-            <option value="Pasto 5">Pasto 5</option>
-            <option value="Pasto 6">Pasto 6</option>
-            <option value="Pasto 7">Pasto 7</option>
-            <option value="Pasto 8">Pasto 8</option>
-            <option value="Pasto 9">Pasto 9</option>
-            <option value="Pasto 10">Pasto 10</option>
-            <option value="Pasto 11">Pasto 11</option>
-            <option value="Pasto 12">Pasto 12</option>
-            <option value="Pasto 13">Pasto 13</option>
-            <option value="Pasto 14">Pasto 14</option>
-            <option value="Pasto 15">Pasto 15</option>
-            <option value="Pasto 16">Pasto 16</option>
-            <option value="Pasto 17">Pasto 17</option>
-            <option value="Pasto 18.1">Pasto 18.1</option>
-            <option value="Pasto 18.2">Pasto 18.2</option>
-            <option value="Pasto 19.1">Pasto 19.1</option>
-            <option value="Pasto 19.2">Pasto 19.2</option>
-            <option value="Bastiao">Bastião</option>
-            <option value="Quicuio 1">Quicuio 1</option>
-            <option value="Quicuio 2">Quicuio 2</option>
-            <option value="Pasto da Mata">Pasto da Mata</option>
-            <option value="Paiada">Paiada</option>
-            <option value="Altamira">Altamira</option>
-            <option value="Cata-Vento">Cata-Vento</option>
-            <option value="Barro Vermelho">Barro Vermelho</option>
-            <option value="Pasto 23">Pasto 23</option>
-            <option value="Pasto 24">Pasto 24</option>
-            <option value="Pasto 25">Pasto 25</option>
-            <option value="Pasto 26">Pasto 26</option>
-            <option value="Pasto 27">Pasto 27</option>
-            <option value="Pasto 28">Pasto 28</option>
-            <option value="Pasto 30">Pasto 30</option>
+        <option value="Pasto 1">Pasto 1</option>
+        <option value="Pasto 2">Pasto 2</option>
+        <option value="Pasto 3">Pasto 3</option>
+        <option value="Pasto 4">Pasto 4</option>
+        <option value="Pasto 5">Pasto 5</option>
+        <option value="Pasto 6">Pasto 6</option>
+        <option value="Pasto 7">Pasto 7</option>
+        <option value="Pasto 8">Pasto 8</option>
+        <option value="Pasto 9">Pasto 9</option>
+        <option value="Pasto 10">Pasto 10</option>
+        <option value="Pasto 11">Pasto 11</option>
+        <option value="Pasto 12">Pasto 12</option>
+        <option value="Pasto 13">Pasto 13</option>
+        <option value="Pasto 14">Pasto 14</option>
+        <option value="Pasto 15">Pasto 15</option>
+        <option value="Pasto 16">Pasto 16</option>
+        <option value="Pasto 17">Pasto 17</option>
+        <option value="Pasto 18.1">Pasto 18.1</option>
+        <option value="Pasto 18.2">Pasto 18.2</option>
+        <option value="Pasto 19.1">Pasto 19.1</option>
+        <option value="Pasto 19.2">Pasto 19.2</option>
+        <option value="Bastiao">Bastião</option>
+        <option value="Quicuio 1">Quicuio 1</option>
+        <option value="Quicuio 2">Quicuio 2</option>
+        <option value="Pasto da Mata">Pasto da Mata</option>
+        <option value="Paiada">Paiada</option>
+        <option value="Altamira">Altamira</option>
+        <option value="Cata-Vento">Cata-Vento</option>
+        <option value="Terra Vermelha">Barro Vermelho</option>
+        <option value="Pasto 23">Pasto 23</option>
+        <option value="Pasto 24">Pasto 24</option>
+        <option value="Pasto 25">Pasto 25</option>
+        <option value="Pasto 26">Pasto 26</option>
+        <option value="Pasto 27">Pasto 27</option>
+        <option value="Pasto 28">Pasto 28</option>
+        <option value="Pasto 30">Pasto 30</option>
+        <option value="Pasto 31">Pasto 31</option>
     </select>
 
     <label for="saco">Saco:</label>
@@ -61,21 +62,39 @@
         <option value="Sal com Ureia">Sal com Ureia</option>
         <option value="Ração de Baixo Consumo">Ração de Baixo Consumo</option>
         <option value="Ração de Alto Consumo">Ração de Alto Consumo</option>   
-        <option value="Ração de Engorda">Ração de Engorda</option>     
+        <option value="Ração de Engorda">Ração de Engorda</option>
+        <option value="Creep">Creep</option>          
     </select>
-
+    
     <label for="quantidade">Quantidade:</label>
     <input type="number" id="quantidade" name="quantidade" min="1" required>
 
-    <button type="button" class="submit-button" onclick="exibirDados()">Adicionar</button>
-  </form>
-  <br>
-  <div id="result" style="background-color: white; margin-top: 20px; border: 1px solid #000; padding: 10px; width: 100%; max-width: 400px; margin: auto;">
-    <p>Relatório dos Cochos</p>
-  </div>
+    <button class="add-button" id="addButton" type="button" onclick="mostrarAdicional()">+</button>
+    <br>
 
-  <div id="relatorio" style="margin-top: 20px; padding: 10px; width: 100%; max-width: 400px; margin: auto;">
-  
+    <label for="adicional" id="addLabel" style="display:none">Saco:</label>
+    <select id="adicional" name="adicional" style="display:none">
+        <option value="" disabled selected>Selecione um suplemento</option>
+        <option value="Sal">Sal</option>
+        <option value="Sal Mineral">Sal Mineral</option>
+        <option value="Sal com Ureia">Sal com Ureia</option>
+        <option value="Ração de Baixo Consumo">Ração de Baixo Consumo</option>
+        <option value="Ração de Alto Consumo">Ração de Alto Consumo</option>   
+        <option value="Ração de Engorda">Ração de Engorda</option>     
+        <option value="Creep">Creep</option>     
+    </select>
+
+    <label for="quantidade2" id="qtdLabel" style="display:none">Quantidade:</label>
+    <input type="number" id="quantidade2" name="quantidade2" min="1" style="display:none">
+
+    <button type="button" class="submit-button" onclick="exibirDados()">Adicionar</button>
+</form>
+<br>
+<div id="result" style="background-color: white; margin-top: 20px; border: 1px solid #000; padding: 10px; width: 100%; max-width: 400px; margin: auto;">
+    <p>Relatório dos Cochos</p>
+</div>
+
+<div id="relatorio" style="margin-top: 20px; padding: 10px; width: 100%; max-width: 400px; margin: auto;">
     <button type="button" class="image-button" onclick="copyToClipboard()">
         <img src="img/copy-svgrepo-com.svg">
     </button>
@@ -83,39 +102,63 @@
     <button type="button" class="image-button" onclick="limparResultado()">
         <img src="img/eraser-svgrepo-com.svg">
     </button>  
-      
-  </div>
+</div>
 
+<div id="copy-message" class="copy-message">Texto copiado para a área de transferência!</div>
 
-  <div id="copy-message" class="copy-message">Texto copiado para a área de transferência!</div>
+<script>
 
+    function mostrarAdicional() {
+        document.getElementById('adicional').style.display = 'block';
+        document.getElementById('addLabel').style.display = 'block';
+        document.getElementById('quantidade2').style.display = 'block';
+        document.getElementById('qtdLabel').style.display = 'block';        
+        document.getElementById('addButton').style.display = 'none';
+    }
 
-  <script>
     function exibirDados() {
         var pasto = document.getElementById('pasto').value;
+        var adicional = document.getElementById('adicional').value;
         var saco = document.getElementById('saco').value;
         var quantidade = document.getElementById('quantidade').value;
+        var quantidade2 = document.getElementById('quantidade2').value;
 
         if (!pasto || !saco || !quantidade) {
-            alert('Por favor, preencha todos os campos.');
+            alert('Por favor, preencha todos os campos obrigatórios.');
             return; 
+        }
+
+        if ((adicional && !quantidade2) || (!adicional && quantidade2)) {
+            alert('Se um suplemento adicional for preenchido, a quantidade adicional também deve ser fornecida, e vice-versa.');
+            return;
         }
 
         var agora = new Date();
         var dataHora = agora.toLocaleDateString();
 
         var resultDiv = document.getElementById('result');
+        var novoTexto = `${pasto}, ${saco}: ${quantidade} saco(s)`;
+
+        if (adicional && quantidade2) {
+            novoTexto += `; ${adicional}: ${quantidade2} saco(s)`;
+        }
 
         if (resultDiv.children.length === 0 || !resultDiv.children[0].classList.contains('header')) {
-            resultDiv.innerHTML = `<p class="header">Relatório dos Cochos</p><p class="data">Data: ${dataHora}</p><p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML = `<p class="header">Relatório dos Cochos</p><p class="data">Data: ${dataHora}</p><p>${novoTexto}<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         } else {
-            resultDiv.innerHTML += `<p>${pasto}, ${saco}, ${quantidade} saco(s)<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
+            resultDiv.innerHTML += `<p>${novoTexto}<button class="delete-button" onclick="deletarItem(this)">  <img src="img/delete-button-svgrepo-com.svg" alt="delete-button"></button></p>`;
         }
 
         document.getElementById('pasto').value = "";
         document.getElementById('saco').value = "";
         document.getElementById('quantidade').value = "";
+        document.getElementById('adicional').style.display = 'none';
+        document.getElementById('addLabel').style.display = 'none';
+        document.getElementById('quantidade2').style.display = 'none';
+        document.getElementById('qtdLabel').style.display = 'none';
+        document.getElementById('addButton').style.display = 'block';
     }
+
 
     function limparResultado() {
         var resultDiv = document.getElementById('result');
@@ -125,7 +168,6 @@
     function deletarItem(button) {
         button.parentElement.remove();
     }
-
 
     function copyToClipboard() {
         const resultDiv = document.getElementById('result');
@@ -143,7 +185,6 @@
                 alert('Erro ao copiar texto: ', err);
             });
     }
-
-  </script>
+</script>
 </body>
 </html>
